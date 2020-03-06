@@ -1,0 +1,29 @@
+<form #form="ngForm">
+    <h1>Your details here</h1>
+    <div class="form-group" [attr.data-validation-msg]="'Name is required'" [class.valid]="form.controls.name?.valid">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="model.name" class="form-control" id="name" name="name" required/>
+    </div>
+    <div class="form-group" [attr.data-validation-msg]="'Address is required'" [class.valid]="form.controls.address?.valid">
+        <label for="address">Address</label>
+        <textarea [(ngModel)]="model.address" class="form-control" id="address" name="address" required>
+        </textarea>
+    </div>
+    <div class="form-group" [attr.data-validation-msg]="'Invalid Email'" [class.valid]="form.controls.email?.valid">
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="model.email" class="form-control" id="email" name="email" required email/>
+    </div>
+    <div class="form-group" [attr.data-validation-msg]="'Telephone number must contain 10 digits'" [class.valid]="form.controls.telephone?.valid">
+        <label for="telephone">Telephone</label>
+        <input type="tel" [(ngModel)]="model.telephone" class="form-control" id="telephone" name="telephone" required/>
+    </div>
+    <div class="form-group">
+        <label for="salary">Expected Salary</label>
+        <input appCurrency [options]="currencyOptions" (currencyvalue)="model.expectedSalary=$event" id="salary" name="salary" class="form-control" />
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-success" routerLink="/conclusion" routerLinkActive="active" skipLocationChange (click)="onSubmit()" [disabled]="form.invalid">Submit</button>
+        <button type="button" class="btn btn-default" (click)="reset()">Reset</button>    
+    </div>
+
+</form>

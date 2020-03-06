@@ -1,0 +1,9 @@
+form {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+:not(.valid).form-group::after {
+    content: attr(data-validation-msg);
+    color: red;
+}

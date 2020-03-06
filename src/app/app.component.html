@@ -1,0 +1,6 @@
+<header class="app-header" routerLink="/">
+    WalletHub
+</header>
+<section class="app-main" [@routeTrigger]="getRouteState(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</section>
