@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ConclusionComponent } from './conclusion.component';
 import { Routes, RouterModule } from '@angular/router';
-import {  MatTabsModule} from '@angular/material';
+import { MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
 const conclusionRoutes: Routes = [
     { path: '', component: ConclusionComponent,
